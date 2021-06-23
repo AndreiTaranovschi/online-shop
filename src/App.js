@@ -1,4 +1,5 @@
 import React from "react";
+import Payment from "../src/components/payment";
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,17 +17,24 @@ import SingleItem from "./components/SingleItem/SingleItem";
 
 function App({ current }) {
   return (
+
     <Router>
+
       <div className="app">
+
+
         <Navbar />
+
         <Switch>
           <Route exact path="/" component={Products} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/payment" component={Payment} />
           {!current ? (
             <Redirect to="/" />
           ) : (
             <Route exact path="/product/:id" component={SingleItem} />
           )}
+
         </Switch>
       </div>
     </Router>
